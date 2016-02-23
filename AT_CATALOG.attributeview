@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_CATALOG" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="Catalog view for Master"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="ID" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATALOG" columnName="ID"/>
+    </attribute>
+    <attribute id="NAME" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATALOG" columnName="NAME"/>
+    </attribute>
+    <attribute id="ID_Entry" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ID_Entry"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="ID"/>
+    </attribute>
+    <attribute id="NAME_1" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="NAME_1"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="NAME"/>
+    </attribute>
+    <attribute id="SHORTDESC" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="SHORTDESC"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="SHORTDESC"/>
+    </attribute>
+    <attribute id="LEVEL_INDEX" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="LEVEL_INDEX"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="LEVEL_INDEX"/>
+    </attribute>
+    <attribute id="PARENT" order="7" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PARENT"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="PARENT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATALOG"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATALOG"/>
+        <rightTable schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL"/>
+        <leftColumns>
+          <columnName>ID</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>CATID</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="PIC_CATALOG" modelObjectNameSpace="NEO_03JLKU59NURG8J4LN3VTUGSN6" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="PIC_CATLEVEL" modelObjectNameSpace="NEO_03JLKU59NURG8J4LN3VTUGSN6" modelObjectType="catalog">
+          <upperLeftCorner x="472" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize height="0" width="0"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

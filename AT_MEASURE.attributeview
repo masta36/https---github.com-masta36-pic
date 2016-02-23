@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_MEASURE" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="AT_MEASURE"/>
+  <metadata changedAt="2016-02-19 13:22:52.171"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="ENTRYID" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ENTRYID"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="MEASURES" columnName="ENTRYID"/>
+    </attribute>
+    <attribute id="AMOUNT" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="AMOUNT"/>
+      <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="MEASURES" columnName="AMOUNT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="MEASURES"/>
+      </tableProxy>
+    </tableProxies>
+    <joins/>
+    <layout>
+      <shapes>
+        <shape modelObjectName="MEASURES" modelObjectNameSpace="NEO_03JLKU59NURG8J4LN3VTUGSN6" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

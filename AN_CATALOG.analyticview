@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube:cube xmlns:Cube="http://www.sap.com/ndb/BiModelCube.ecore" schemaVersion="1.5" id="AN_CATALOG" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled">
+  <origin/>
+  <descriptions defaultDescription="AN_CATALOGAN_CATALOG"/>
+  <metadata changedAt="2016-02-19 13:23:48.777"/>
+  <localVariables/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <privateMeasureGroup id="MeasureGroup">
+    <attributes>
+      <attribute id="SHORTDESC" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SHORTDESC"/>
+        <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="SHORTDESC"/>
+      </attribute>
+      <attribute id="Name11" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NAME_1"/>
+        <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="NAME"/>
+      </attribute>
+      <attribute id="ID" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID"/>
+        <keyMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="ID"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies>
+        <tableProxy>
+          <table schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL"/>
+        </tableProxy>
+      </tableProxies>
+      <joins/>
+      <layout>
+        <shapes>
+          <shape modelObjectName="PIC_CATLEVEL" modelObjectNameSpace="NEO_03JLKU59NURG8J4LN3VTUGSN6" modelObjectType="catalog">
+            <upperLeftCorner x="435" y="30"/>
+          </shape>
+        </shapes>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="PARENT" order="2" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="PARENT"/>
+        <measureMapping schemaName="NEO_03JLKU59NURG8J4LN3VTUGSN6" columnObjectName="PIC_CATLEVEL" columnName="PARENT"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/s0015668568trial.pr36hana.pic/attributeviews/AT_MEASURE">
+        <attributes>
+          <attributeRef>#ID</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>ENTRYID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+    </sharedDimensions>
+    <layout>
+      <shapes>
+        <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
+          <upperLeftCorner x="32" y="45"/>
+        </shape>
+        <shape modelObjectName="/s0015668568trial.pr36hana.pic/attributeviews/AT_MEASURE" modelObjectType="repository">
+          <upperLeftCorner x="321" y="54"/>
+        </shape>
+        <shape modelObjectName="LogicalView" modelObjectNameSpace="MeasureGroup" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateMeasureGroup>
+</Cube:cube>

@@ -1,0 +1,15 @@
+service {
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."V_PIC_CATALOG" as "CATALOG" keys("ENTRY_ID")
+  navigates ("master" as "GetMasterdata", "docs" as "GetDocuments", "texts" as "GetTexts", "classif" as "GetClassif", "images" as "GetImages"); 
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."V_MASTERDATA_SORTED" as "MASTERDATA" keys("ENTRYID", "ROW", "ORDER");
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."PIC_ENTRYDOCS" as "DOCUMENTS" navigates ("docclassif" as "GetClassif");
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."PIC_ENTRYTEXTS" as "TEXTS";
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."V_ENTRYCLASSIF" as "CLASSIF" keys("ENTRYID", "ELEMENT");
+  "NEO_03JLKU59NURG8J4LN3VTUGSN6"."PIC_ENTRYPICS" as "IMAGES";
+  association "master" principal "CATALOG"("ENTRY_ID") multiplicity "1" dependent "MASTERDATA"("ENTRYID") multiplicity "*";
+  association "docs" principal "CATALOG"("ENTRY_ID") multiplicity "1" dependent "DOCUMENTS"("ENTRYID") multiplicity "*";
+  association "texts" principal "CATALOG"("ENTRY_ID") multiplicity "1" dependent "TEXTS"("ENTRYID") multiplicity "*";
+  association "classif" principal "CATALOG"("ENTRY_ID", "ELEMENT") multiplicity "1" dependent "CLASSIF"("ENTRYID", "ELEMENT") multiplicity "*";
+  association "docclassif" principal "DOCUMENTS"("ENTRYID", "ELEMENT") multiplicity "1" dependent "CLASSIF"("ENTRYID", "ELEMENT") multiplicity "*";
+  association "images" principal "CATALOG"("ENTRY_ID") multiplicity "1" dependent "IMAGES"("ENTRYID") multiplicity "*";
+}         

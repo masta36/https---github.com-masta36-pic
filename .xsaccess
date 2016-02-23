@@ -1,0 +1,6 @@
+{  
+"exposed": true,  
+"authentication": [{"method": "Form"}],  
+"authorization": ["s0015668568trial.pr36hana.pic::Execute"],  
+"prevent_xsrf": false  
+}  

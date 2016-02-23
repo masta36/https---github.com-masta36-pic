@@ -1,0 +1,6 @@
+role s0015668568trial.pr36hana.pic::user
+{  
+  catalog schema "NEO_03JLKU59NURG8J4LN3VTUGSN6": CREATE ANY, DROP, INDEX, SELECT, INSERT, UPDATE, DELETE;  
+  application privilege: s0015668568trial.pr36hana.pic::Execute;  
+  sql object s0015668568trial.pr36hana.pic::AT_CATALOG: SELECT;
+}  
